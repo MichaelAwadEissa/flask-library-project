@@ -26,6 +26,9 @@ create db:
 pip install psycopg2-binary
 
 psql -U postgres
+sudo -i -u postgres
+psql
+
 
 CREATE DATABASE mydatabase;
 \q
