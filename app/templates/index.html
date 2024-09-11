@@ -1,0 +1,16 @@
+{% extends "base.html" %} {% block content %}
+<h1>Library Books</h1>
+<a href="{{ url_for('main.create_book') }}">Add New Book</a>
+<div class="books">
+  {% for book in books %}
+  <div class="book">
+    <h2>{{ book.title }}</h2>
+    <img
+      src="{{ url_for('static', filename='cover_photos/' ~ book.cover_photo) }}"
+      alt="{{ book.title }}"
+    />
+    <a href="{{ url_for('main.book_detail', id=book.id) }}">Show Details</a>
+  </div>
+  {% endfor %}
+</div>
+{% endblock %}

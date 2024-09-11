@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block content %}
+<h1>Create New Book</h1>
+<form method="POST" enctype="multipart/form-data">
+  {{ form.hidden_tag() }}
+  <div>
+    {{ form.title.label }}<br />
+    {{ form.title(size=32) }}
+  </div>
+  <div>
+    {{ form.cover_photo.label }}<br />
+    {{ form.cover_photo() }}
+  </div>
+  <div>
+    {{ form.pages.label }}<br />
+    {{ form.pages() }}
+  </div>
+  <div>
+    {{ form.description.label }}<br />
+    {{ form.description(cols=40, rows=5) }}
+  </div>
+  <div>{{ form.submit() }}</div>
+</form>
+{% endblock %}
